@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>welcome</title>
+</head>
+<body>
+<h1> Question and answers</h1>
+<p th:text="${message}">question</p>
+<h3  th:text="${Name}"></h3> 
+ <label >Email: <span th:text="${Email}"></span></label>
+<h2 th:text="${question}">question</h2>
+<form action="edit" method="post">
+<label for="edit">Edit this question:</label> <br/>
+<input type="text" name="edit">     
+
+ <!--   <input type="number" name="id" /> <br/>  -->
+       <input type="hidden" id="id" name="id" th:value="${id}">
+       
+<button type="submit">Update</button>
+</form>
+<!--<form action="register" method="post">
+<label for="answer">Answer this question :</label> <br/>
+<input type="text" name="answer"/> <br/>
+<br/>
+<button type="submit">Submit</button>
+</form>-->
+  <form action="delete" method="post">
+  <p>Are you sure you want to delte? Enter the id to delete this question</p>
+      <label for="id">ID: <span th:text="${id}"></span></label>
+       <input type="number" name="id" /> <br/>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
