@@ -1,26 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Index</title>
+    <meta charset="ISO-8859-1">
+    <title>Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
 <h1>This is a simple Question and Answer page</h1>
 <form action="register" method="post">
-<label for="name">First name :</label> <br/>
-<input type="text" name="name"/> <br/>
+    <label for="name">First name :</label>
+    <input type="text" name="name"/>
 
-<label for="email">Email :</label> <br/>
-<input type="email" name="email"/> <br/>
-<label for="askquestion">Question :</label> <br/>
-<input type="text" name="askquestion"/> <br/>
+    <label for="email">Email :</label>
+    <input type="email" name="email"/>
 
+    <label for="askquestion">Question :</label>
+    <input type="text" name="askquestion"/>
 
-
-<button type="submit">Submit</button>
-
-<br/>
+    <button type="submit">Submit</button>
 </form>
 
 </body>

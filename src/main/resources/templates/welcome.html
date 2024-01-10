@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>welcome</title>
+    <meta charset="ISO-8859-1">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button, input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<h1> Question and answers</h1>
-<p th:text="${message}">question</p>
-<h3  th:text="${Name}"></h3> 
- <label >Email: <span th:text="${Email}"></span></label>
-<h2 th:text="${question}">question</h2>
-<form action="edit" method="post">
-<label for="edit">Edit this question:</label> <br/>
-<input type="text" name="edit">     
 
- <!--   <input type="number" name="id" /> <br/>  -->
-       <input type="hidden" id="id" name="id" th:value="${id}">
-       
-<button type="submit">Update</button>
+<h1>Question and Answers</h1>
+<p th:text="${message}">Question</p>
+<h3 th:text="${Name}"></h3>
+<label>Email: <span th:text="${Email}"></span></label>
+<h2 th:text="${question}">Question</h2>
+
+<form action="edit" method="post">
+    <label for="edit">Edit this question:</label> <br/>
+    <input type="text" name="edit">
+    <input type="hidden" id="id" name="id" th:value="${id}">
+    <button type="submit">Update</button>
 </form>
-<!--<form action="register" method="post">
-<label for="answer">Answer this question :</label> <br/>
-<input type="text" name="answer"/> <br/>
-<br/>
-<button type="submit">Submit</button>
-</form>-->
-  <form action="delete" method="post">
-  <p>Are you sure you want to delte? Enter the id to delete this question</p>
-      <label for="id">ID: <span th:text="${id}"></span></label>
-       <input type="number" name="id" /> <br/>
-        <input type="submit" value="Delete">
-    </form>
+
+<form action="delete" method="post">
+    <p>Are you sure you want to delete? Enter the id to delete this question</p>
+    <label for="id">ID: <span th:text="${id}"></span></label>
+    <input type="number" name="id" />
+    <input type="submit" value="Delete">
+</form>
+
 </body>
 </html>
